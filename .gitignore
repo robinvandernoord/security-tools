@@ -1,0 +1,7 @@
+venv
+logger.txt
+build
+dist/script
+__*
+.idea
+*.spec
