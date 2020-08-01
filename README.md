@@ -6,3 +6,6 @@ Modify script.py, run ZZ-compile.bat and press 'y' if asked to. You can now zip 
 
 ## Installing
 Unzip somewhere and execute ZZ-install.bat
+
+## Other Files
+This repo also contains some txt files with instructions to cracking local security
