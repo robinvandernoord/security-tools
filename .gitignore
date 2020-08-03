@@ -1,7 +1,7 @@
 venv
 logger.txt
 build
-dist/script
+dist/client
 __*
 .idea
 *.spec

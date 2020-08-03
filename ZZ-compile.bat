@@ -1,1 +1,1 @@
-venv\scripts\activate & pip3 install -r requirements.txt & pyinstaller --noconsole script.py
+venv\scripts\activate & pip3 install -r requirements.txt & pyinstaller --noconsole client.py
